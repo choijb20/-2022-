@@ -52,7 +52,7 @@ schedule_keys: generate round keys for round function
 returns array of round keys.
 keep in mind that total rounds of S-DES is 2.
 '''
-def schedule_keys(key: bitarray) -> list[bitarray]:
+def schedule_keys(key: bitarray) -> list:
     round_keys = []
     permuted_key = bitarray()
 
@@ -108,7 +108,7 @@ def round(text: bitarray, round_key: bitarray) -> bitarray:
     result = bitarray()
     for i in P4:
         result.append(pre_perm4[i])
-
+   
     return result
 
 '''
@@ -120,6 +120,15 @@ def sdes(text: bitarray, key: bitarray, mode) -> bitarray:
     result = bitarray()
     
     # Place your own implementation of S-DES Here
+    arraytext = bitarray()
+    
+    for i in IP:
+        arraytext.append(text[i])
+     
+    arraytext_left = arraytext[0:4]
+    arraytext_right = arraytext[4:8]
+    
+        
     
     return result
 
