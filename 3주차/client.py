@@ -21,7 +21,8 @@ class Receiver(Thread):
     def decrypt(self, ciphertext: bytes) -> bytes:
         # place your own implementation of
         # AES-128-ECB decryption with pycryptodome
-
+     ciphertext = base64, base64t(ciphertext)
+    cipher = AES.new(ENCRYPTION_KEY, AES.MODE_ECB)
         return b''
 
     def handle_recv(self, received: bytes):
@@ -40,7 +41,7 @@ class Receiver(Thread):
 def encrypt_message(msg: bytes) -> bytes:
     # place your own implementation of
     # AES-128-ECB encryption with pycryptodome
-
+    msg = pad(msg, BLOCK_SIZE)
     return b''
 
 
