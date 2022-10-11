@@ -18,7 +18,7 @@ IP_1 = [3, 0, 2, 4, 6, 1, 7, 5]
 EP = [3, 0, 1, 2, 1, 2, 3, 0]
 
 # SBox (S0)
-S0 = [2
+S0 = [
     [1, 0, 3, 2],
     [3, 2, 1, 0],
     [0, 2, 1, 3],
@@ -156,10 +156,14 @@ def sdes(text: bitarray, key: bitarray, mode) -> bitarray:
 
 
 def sdes_encrypt_ecb(text: bitarray, key: bitarray):
-    pass
+     result_encrypt = bitarray()
+    Atext = len(text)
+    Ctext = int(Atext/8)
+    iter_num = 0
 
 
 def sdes_decrypt_ecb(ciphertext: bitarray, key: bitarray):
+    iter_num += 1
     pass
 
 
