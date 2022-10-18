@@ -24,8 +24,13 @@ def primesInRange(x, y):
 def make_keys(p: BigNumber, q: BigNumber):
     # place your own implementation of make_keys
     # use e = 65537 as if FIPS standard
+    
+    n = p*q; euler_phi = (p-1)*(q-1)
+    e = 65537; d = 1
+    while (d*e)%euler_phi != 1 or d == e : d+=1
 
     return [e, d, n]
+    
 
 
 def rsa_encrypt(plain: BigNumber, e: BigNumber, n: BigNumber):
